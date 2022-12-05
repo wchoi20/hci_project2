@@ -119,13 +119,14 @@
             
                 // Now add the annotation. Use the centroid method to get the best coordinates
               u
-                .selectAll("path")
+                .enter()
+                .selectAll('mySlices')
                 .data(data_ready)
                 .enter()
                 .append('text')
                 .text(function(d){ return d.data.key})
                 .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")";  })
-                .style("text-anchor", "middle")
+                .style("text-anchor", "end")
                 .style("font-size", 17)
 
               // remove the group that is not present anymore
@@ -140,7 +141,7 @@
             
             </script>
 
-            <p></p>
+            <p>test line</p>
 
             <!-- Load d3.js -->
             <script src="http://d3js.org/d3.v4.js"></script>
