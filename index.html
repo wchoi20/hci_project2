@@ -141,23 +141,21 @@
             
             </script>
 
-        <h3>United States Map</h3>
-        <p>
-            to be written
-        </p>
+            <p></p>
 
             <!-- Load d3.js -->
             <script src="http://d3js.org/d3.v4.js"></script>
             <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
             <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
 
+            <p></p>
             <!-- Create an element where the map will take place -->
-            <svg id="my_dataviz2" width="400" height="300"></svg>
+            <svg id="my_dataviz2" width="600" height="400"></svg>
 
             <script>
 
                 // The svg
-                var svg = d3.select("svg"),
+                var svg = d3.select("#my_dataviz2"),
                   width = +svg.attr("width"),
                   height = +svg.attr("height");
                 
