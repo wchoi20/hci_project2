@@ -81,7 +81,7 @@
             
             // create 2 data_set
             var year2020 = {Northeast: 79032, Midwest: 70528, South:64355, West:78755}
-            var year2021 = {Northeast: 77472, Midwest: 71129, South:10, West:79430}
+            var year2021 = {Northeast: 77472, Midwest: 71129, South:63368, West:79430}
             
             // set the color scale
             var color = d3.scaleOrdinal()
@@ -117,6 +117,17 @@
                 .style("stroke-width", "2px")
                 .style("opacity", 1)
             
+                // Now add the annotation. Use the centroid method to get the best coordinates
+              svg
+                .selectAll('mySlices')
+                .data(data_ready)
+                .enter()
+                .append('text')
+                .text(function(d){ return "grp " + d.data.key})
+                .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")";  })
+                .style("text-anchor", "middle")
+                .style("font-size", 17)
+
               // remove the group that is not present anymore
               u
                 .exit()
