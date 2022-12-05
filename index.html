@@ -98,11 +98,9 @@
               var data_ready = pie(d3.entries(data))
             
               // map to data
-              var u = svg.selectAll("path")
+              svg
+                .selectAll('mySlices')
                 .data(data_ready)
-            
-              // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
-              u
                 .enter()
                 .append('path')
                 .merge(u)
@@ -118,8 +116,7 @@
                 .style("opacity", 1)
             
                 // Now add the annotation. Use the centroid method to get the best coordinates
-              u
-                .enter()
+              svg
                 .selectAll('mySlices')
                 .data(data_ready)
                 .enter()
