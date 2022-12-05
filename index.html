@@ -120,9 +120,6 @@
                 // Now add the annotation. Use the centroid method to get the best coordinates
               u
                 .enter()
-                .selectAll('mySlices')
-                .data(data_ready)
-                .enter()
                 .append('text')
                 .text(function(d){ return d.data.key})
                 .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")";  })
@@ -174,8 +171,8 @@
                 
                 // Load external data and boot
                 d3.queue()
-                  .defer(d3.json, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")
-                  .defer(d3.csv, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world_population.csv", function(d) { data.set(d.code, +d.pop); })
+                  .defer(d3.json, "https://raw.githubusercontent.com/wchoi20/hci_project2/main/states-albers-10m.json")
+                  .defer(d3.csv, "https://raw.githubusercontent.com/wchoi20/hci_project2/main/wealth_by_states.csv", function(d) { data.set(d.code, +d.pop); })
                   .await(ready);
                 
                 function ready(error, topo) {
