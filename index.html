@@ -118,8 +118,9 @@
                 .style("opacity", 1)
             
                 // Now add the annotation. Use the centroid method to get the best coordinates
-              svg
-                .selectAll('path')
+              u
+                .enter()
+                .selectAll('mySlices')
                 .data(data_ready)
                 .enter()
                 .append('text')
