@@ -58,8 +58,8 @@
             to be written
         </p>
         <!-- Add 2 buttons -->
-        <button onclick="update(year2020)" style="text-align:center">2020</button>
-        <button onclick="update(year2021)" style="text-align:center">2021</button>
+        <button onclick="update(year2020)">2020</button>
+        <button onclick="update(year2021)">2021</button>
         <div id="my_dataviz" style="text-align:center"></div>
         <script>
 
@@ -171,8 +171,8 @@
                 
                 // Load external data and boot
                 d3.queue()
-                  .defer(d3.json, "https://raw.githubusercontent.com/wchoi20/hci_project2/main/states-albers-10m.json")
-                  .defer(d3.csv, "https://raw.githubusercontent.com/wchoi20/hci_project2/main/wealth_by_states.csv", function(d) { data.set(d.code, +d.pop); })
+                  .defer(d3.json, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")
+                  .defer(d3.csv, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world_population.csv", function(d) { data.set(d.code, +d.pop); })
                   .await(ready);
                 
                 function ready(error, topo) {
