@@ -119,8 +119,7 @@
             
                 // Now add the annotation. Use the centroid method to get the best coordinates
               u
-                .enter()
-                .selectAll('mySlices')
+                .selectAll("path")
                 .data(data_ready)
                 .enter()
                 .append('text')
